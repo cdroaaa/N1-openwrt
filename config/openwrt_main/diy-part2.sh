@@ -9,7 +9,7 @@
 # ------------------------------- Main source configuration -------------------------------
 #
 # Set the default LAN IP address
-default_ip="192.168.1.1"
+default_ip="192.168.2.2"
 ip_regex="^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
 # Override default IP if a valid custom IP is provided as the first argument
 [[ -n "${1}" && "${1}" != "${default_ip}" && "${1}" =~ ${ip_regex} ]] && {
@@ -46,8 +46,11 @@ fi
 # ------------------------------- Additional customizations -------------------------------
 #
 # Add luci-app-amlogic
-rm -rf package/luci-app-amlogic
-git clone -b main https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
+# rm -rf package/luci-app-amlogic
+git clone -b main https://github.com/kenzok8/openwrt-daede.git package/daed
+git clone -b main https://github.com/nikkinikki-org/OpenWrt-nikki.git package/nikki
+git clone -b main https://github.com/ophub/luci-app-amlogic.git package/amlogic
+
 #
 # Apply patches
 # git apply ../config/patches/{0001*,0002*}.patch --directory=feeds/luci
