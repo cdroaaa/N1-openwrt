@@ -47,7 +47,6 @@ fi
 #
 # Add luci-app-amlogic
 # rm -rf package/luci-app-amlogic
-git clone -b main https://github.com/kenzok8/openwrt-daede.git package/daed
 git clone -b main https://github.com/nikkinikki-org/OpenWrt-nikki.git package/nikki
 git clone -b main https://github.com/ophub/luci-app-amlogic.git package/amlogic
 
